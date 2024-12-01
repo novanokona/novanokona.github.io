@@ -2,30 +2,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+    <title>Simple Login</title>
 </head>
 <body>
 
-    <h2>Login</h2>
-    <form action="#" method="post">
-        <label for="username">Username:</label><br>
-        <input type="text" id="username" name="username" required><br><br>
+   
+    <div id="loginForm">
+        <h2>Login</h2>
+        <form onsubmit="login(); return false;">
+            <label for="username">Username:</label><br>
+            <input type="text" id="username" required><br><br>
+            
+            <label for="password">Password:</label><br>
+            <input type="password" id="password" required><br><br>
+            
+            <input type="submit" value="Login">
+        </form>
+    </div>
+
+    
+    <div id="dashboard" style="display: none;">
+        <h2>Welcome to your Dashboard!</h2>
+        <button onclick="addItem()">Add Item</button>
+    </div>
+
+    <script>
+       
+        function login() {
+            
+            document.getElementById('loginForm').style.display = 'none';
+            
+            
+            document.getElementById('dashboard').style.display = 'block';
+        }
+
         
-        <label for="password">Password:</label><br>
-        <input type="password" id="password" name="password" required><br><br>
-        
-        <input type="submit" value="Login">
-    </form>
+        function addItem() {
+            alert('Item Added!');
+        }
+    </script>
 
 </body>
 </html>
-
-<form action="login.php" method="post">
-    <label for="username">Username:</label><br>
-    <input type="text" id="username" name="username" required><br><br>
-    
-    <label for="password">Password:</label><br>
-    <input type="password" id="password" name="password" required><br><br>
-    
-    <input type="submit" value="Login">
-</form>
