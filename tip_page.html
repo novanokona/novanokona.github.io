@@ -68,35 +68,59 @@ footer {
   }
 }
 </style>
+<script>
+  function showOption(option) {
+    const article = document.querySelector('article');
+    if (option === 1) {
+      article.innerHTML = `
+        <h1>Option 1</h1>
+        <p>This option is better for the environment than the item you put in because the way it was made uses 100 percent renewable energy.</p>
+        <p>Also, this option is made from recycled materials. And the company producing the item has been carbon negative for the past 5 years.</p>
+      `;
+    } else if (option === 2) {
+      article.innerHTML = `
+        <h1>Option 2</h1>
+        <p>This option uses a new type of biodegradable material that breaks down in nature in just 3 months, reducing waste significantly.</p>
+        <p>The production process uses solar energy, and the packaging is 100% compostable.</p>
+      `;
+    } else if (option === 3) {
+      article.innerHTML = `
+        <h1>Option 3</h1>
+        <p>This option has a lower carbon footprint, produced with locally sourced materials to reduce transportation emissions.</p>
+        <p>The company also supports reforestation projects, planting a tree for every item sold.</p>
+      `;
+    }
+  }
+</script>
 </head>
 <body>
 
-<h2>More Enviornmentaly Friendly Item</h2>
-<p>Your item seems to be harmful to the enviornment</p>
-<p>Here is a item that has less of an effect on the enviornment</p>
+<h2>More Environmentally Friendly Item</h2>
+<p>Your item seems to be harmful to the environment.</p>
+<p>Here is an item that has less of an effect on the environment.</p>
 
 <header>
-  <h2>more Enviornmentaly Friendly options</h2>
+  <h2>More Environmentally Friendly Options</h2>
 </header>
 
 <section>
   <nav>
     <ul>
-      <li><a href="#">option 1</a></li>
-      <li><a href="#">option 2</a></li>
-      <li><a href="#">option 3</a></li>
+      <li><a href="#" onclick="showOption(1)">Option 1</a></li>
+      <li><a href="#" onclick="showOption(2)">Option 2</a></li>
+      <li><a href="#" onclick="showOption(3)">Option 3</a></li>
     </ul>
   </nav>
-  
+
   <article>
-    <h1>option 1</h1>
-    <p>This option is better on the enviornment than the item you put in because the way it was made uses 100 percent renewable energy.</p>
-    <p>Also, this option is made from recycled materials. And the compony prodicing the item has been carbon negative for the past 5 years</p>
+    <h1>Option 1</h1>
+    <p>This option is better for the environment than the item you put in because the way it was made uses 100 percent renewable energy.</p>
+    <p>Also, this option is made from recycled materials. And the company producing the item has been carbon negative for the past 5 years.</p>
   </article>
 </section>
 
 <footer>
-  <p>Footer</p>
+  <p></p>
 </footer>
 
 </body>
