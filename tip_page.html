@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Item Suggestions</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Style the header */
+header {
+  background-color: #1e874e;
+  padding: 30px;
+  text-align: center;
+  font-size: 35px;
+  color: white;
+}
+
+/* Create two columns/boxes that floats next to each other */
+nav {
+  float: left;
+  width: 30%;
+  height: 300px; /* only for demonstration, should be removed */
+  background: #1c5d35;
+  padding: 20px;
+}
+
+/* Style the list inside the menu */
+nav ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+article {
+  float: left;
+  padding: 20px;
+  width: 70%;
+  background-color: #0dd13e;
+  height: 300px; /* only for demonstration, should be removed */
+}
+
+/* Clear floats after the columns */
+section::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Style the footer */
+footer {
+  background-color: #14967a;
+  padding: 10px;
+  text-align: center;
+  color: white;
+}
+
+/* Responsive layout - makes the two columns/boxes stack on top of each other instead of next to each other, on small screens */
+@media (max-width: 600px) {
+  nav, article {
+    width: 100%;
+    height: auto;
+  }
+}
+</style>
+<script>
+  function showOption(option) {
+    const article = document.querySelector('article');
+    if (option === 1) {
+      article.innerHTML = `
+        <h1>Option 1</h1>
+        <p>This option is better for the environment than the item you put in because the way it was made uses 100 percent renewable energy.</p>
+        <p>Also, this option is made from recycled materials. And the company producing the item has been carbon negative for the past 5 years.</p>
+      `;
+    } else if (option === 2) {
+      article.innerHTML = `
+        <h1>Option 2</h1>
+        <p>This option uses a new type of biodegradable material that breaks down in nature in just 3 months, reducing waste significantly.</p>
+        <p>The production process uses solar energy, and the packaging is 100% compostable.</p>
+      `;
+    } else if (option === 3) {
+      article.innerHTML = `
+        <h1>Option 3</h1>
+        <p>This option has a lower carbon footprint, produced with locally sourced materials to reduce transportation emissions.</p>
+        <p>The company also supports reforestation projects, planting a tree for every item sold.</p>
+      `;
+    }
+  }
+</script>
+</head>
+<body>
+
+<h2>More Environmentally Friendly Item</h2>
+<p>Your item seems to be harmful to the environment.</p>
+<p>Here is an item that has less of an effect on the environment.</p>
+
+<header>
+  <h2>More Environmentally Friendly Options</h2>
+</header>
+
+<section>
+  <nav>
+    <ul>
+      <li><a href="#" onclick="showOption(1)">Option 1</a></li>
+      <li><a href="#" onclick="showOption(2)">Option 2</a></li>
+      <li><a href="#" onclick="showOption(3)">Option 3</a></li>
+    </ul>
+  </nav>
+
+  <article>
+    <h1>Option 1</h1>
+    <p>This option is better for the environment than the item you put in because the way it was made uses 100 percent renewable energy.</p>
+    <p>Also, this option is made from recycled materials. And the company producing the item has been carbon negative for the past 5 years.</p>
+  </article>
+</section>
+
+<footer>
+  <p></p>
+</footer>
+
+</body>
+</html>
